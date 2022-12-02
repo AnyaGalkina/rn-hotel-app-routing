@@ -51,23 +51,17 @@ export const Header = ({renderItemData}:{renderItemData: ListRenderItem<DataFilt
                     onSubmitEditing={() =>  Alert.alert('You found' + " " + value)}
                 />
             </View>
-            {/*<ScrollView horizontal={true}>*/}
                 <FlatList
                     horizontal
                     data={dataFilter}
-                    //numColumns={dataFilter.length}
                     renderItem={renderItemData}
-                    //columnWrapperStyle={{justifyContent: 'space-between'}}
                 />
-            {/*</ScrollView>*/}
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     header: {
-        //flex: 1,
-        //height: 200,
         backgroundColor: '#fff',
         zIndex: 3,
     },

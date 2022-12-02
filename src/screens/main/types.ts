@@ -1,36 +1,43 @@
 import {NavigationProp, NavigatorScreenParams, useNavigation} from '@react-navigation/native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 export type Root = {
     Home: undefined;
-    Inbox: undefined;
-    Tips: undefined;
-    WishList: undefined;
-    Profile: undefined;
+    Inbox: NavigatorScreenParams<NestedRootInbox>;
+    Tips: NavigatorScreenParams<NestedRootTips>;
+    WishList: NavigatorScreenParams<NestedRootWishList>;
+    Profile: NavigatorScreenParams<NestedRootProfile>;
+}
+
+export type NestedRootTips = {
+    GetHelp: undefined
 }
 
 
-
-
-export type Root1 = {
-    Home: NavigatorScreenParams<NestedRoot>;
-    Details: undefined;
-    Users:
-    //     {
-    //     id: number;
-    //     name: string;
-    //     age: number;
-    // } |
-        undefined;
+export type NestedRootInbox = {
+    Messages: undefined
+    Notifications: undefined
+    Unread: undefined
+    Read: undefined
 }
 
-export type NestedRoot = {
-    Login: undefined
-    Reg: undefined
-    Forgot: undefined
+export type NestedRootProfile = {
+    PersonalInfo: undefined
+    Privacy: undefined
+    Payments: undefined
+    Hosting: undefined
+    Support: undefined
+    LogOut: undefined
 }
 
-export type UsersPropsType = NativeStackScreenProps<Root, 'Users'>;
+export type NestedRootWishList = {
+    MainWishList: undefined
+    Argentina: undefined
+    USA: undefined
+    Thai: undefined
+    Australia: undefined
+    NewZealand: undefined
+    Greece: undefined
+}
 
 // useAppNavigation hook helper
 type UseNavigationType = NavigationProp<Root>
